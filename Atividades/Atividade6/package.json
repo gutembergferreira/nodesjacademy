@@ -1,0 +1,20 @@
+{
+    "name": "nodesjacademy",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "nodemon Atividades/Atividade6/index.js /home",
+      "start:prod": "node Atividades/Atividade6/index.js /home"
+    },
+    "author": "gutemberg ferreira",
+    "license": "MIT",
+    "dependencies": {
+      "dotenv": "^16.0.3"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.22"
+    }
+  }
+  
