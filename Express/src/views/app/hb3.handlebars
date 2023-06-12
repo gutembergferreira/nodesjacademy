@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Express + Handlebars!</title>
+    </head>
+    <body>
+        <h1>Handlebars! 3</h1>
+        <h2>Professores</h2>
+        <ul>
+            {{#each professores}}
+            <li>{{nome}} - sala {{sala}}</li>
+            {{/each}}
+        </ul>
+    </body>
+</html>
