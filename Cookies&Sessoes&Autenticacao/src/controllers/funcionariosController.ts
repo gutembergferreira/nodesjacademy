@@ -5,15 +5,15 @@ import { Departamentos } from '../models/Departamentos';
 
 export const createFuncionario = async (req: Request, res: Response) => {
   const funcionarioData = req.body;
-
+  const departamentos = await Departamentos.findAll();
   try {
     const funcionario = await Funcionarios.create(funcionarioData);
     const funcionarios = await Funcionarios.findAll();
-    res.render('main/funcionarios/allFuncionarios', { funcionarios, csrf: req.csrfToken() });
+    res.render('main/funcionarios/allFuncionarios', { funcionarios,departamentos, csrf: req.csrfToken() });
   } catch (e: any) {
     console.error(e.errors);
     const funcionarios = await Funcionarios.findAll();
-    res.render('main/funcionarios/allFuncionarios', { funcionario: funcionarioData, funcionarios, errors: e.errors, csrf: req.csrfToken() });
+    res.render('main/funcionarios/allFuncionarios', { funcionario: funcionarioData, funcionarios, departamentos, errors: e.errors, csrf: req.csrfToken() });
   }
 };
 
