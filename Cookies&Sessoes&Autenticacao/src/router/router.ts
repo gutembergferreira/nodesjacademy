@@ -11,7 +11,6 @@ const router = Router();
 
 // Main controller
 router.get('/',authMiddleware,mainController.index);
-router.get('/',authMiddleware,mainController.index);
 router.get('/about',authMiddleware, mainController.about);
 router.get('/ui',authMiddleware, mainController.ui);
 
