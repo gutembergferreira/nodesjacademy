@@ -1,0 +1,45 @@
+<h1 id="tables">Editar Departamento: {{ funcionario.dataValues.name }}</h1>
+<form action="/funcionarios/{{ funcionario.dataValues.id }}" method="POST" class="needs-validation" novalidate>
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" value="{{ funcionario.dataValues.name }}" class="form-control" id="name" name="name" required>
+        <div class="invalid-feedback" style="display: block;">{{ showError errors 'name' }}</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" value="{{ funcionario.dataValues.endereco }}" class="form-control" id="endereco" name="endereco" required>
+        <div class="invalid-feedback" style="display: block;">{{ showError errors 'endereco' }}</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="fone">Telefone:</label>
+        <input type="text" value="{{ funcionario.dataValues.fone }}" class="form-control" id="fone" name="fone" required>
+        <div class="invalid-feedback" style="display: block;">{{ showError errors 'fone' }}</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" value="{{ funcionario.dataValues.email }}" class="form-control" id="email" name="email" required>
+        <div class="invalid-feedback" style="display: block;">{{ showError errors 'email' }}</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="idade">Idade:</label>
+        <input type="number" value="{{ funcionario.dataValues.idade }}" class="form-control" id="idade" name="idade" required>
+        <div class="invalid-feedback" style="display: block;">{{ showError errors 'idade' }}</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="departamentoId">Departamento:</label>
+        <select class="form-control" id="departamentoId" name="departamentoId" required>
+            {{#each departamentos}}
+            <option value="{{ this.dataValues.id }}">{{ this.dataValues.name }}</option>
+            {{/each}}
+        </select>
+        <div class="invalid-feedback" style="display: block;">{{ showError errors 'departamentoId' }}</div>
+    </div>
+    <br>
+    <input type="hidden" name="_csrf" value="{{ csrf }}">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

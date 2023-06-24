@@ -1,0 +1,16 @@
+<h1>Editar Departamento: {{ departamento.dataValues.name }} </h1>
+<form action="/departamentos/{{departamento.dataValues.id}}" method="POST" class="needs-validation" novalidate>
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" value="{{departamento.dataValues.name}}" class="form-control" id="name" name="name" required>
+        <div class="invalid-feedback" style="display: block;">{{showError errors 'name'}}</div>
+    </div>
+    <div class="form-group">
+        <label for="sigla">Sigla:</label>
+        <input type="text" value="{{departamento.dataValues.sigla}}" class="form-control" id="sigla" name="sigla" required>
+        <div class="invalid-feedback" style="display: block;">{{showError errors 'sigla'}}</div>
+    </div>
+    <br>
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
