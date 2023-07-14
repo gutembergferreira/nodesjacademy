@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: loja_frontend
+    build:
+      context: ./frontend
+    ports:
+      - ${PORT_FRONT}:${PORT_FRONT}
+    volumes:
+      - ./frontend:/usr/src/app
+    env_file: ./frontend/.env
